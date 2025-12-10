@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.my-navbar{
+    max-width: 100% !important;
+}
