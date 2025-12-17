@@ -1,5 +1,5 @@
 const {model}=require("mongoose");
-const {OrdersSchema}=require("../schemas/OrdersSchema.jsx");
+const {PositionsSchema}=require("../schemas/PositionsSchema.jsx");
 
-const OrdersModel=new model("order", OrdersSchema); 
-module.exports={ OrdersModel };
+const PositionsModel=new model("position", PositionsSchema); 
+module.exports={ PositionsModel };
