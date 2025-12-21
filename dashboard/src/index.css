@@ -841,3 +841,38 @@ hr {
 .action:hover {
   background-color: rgb(212, 212, 212);
 }
+
+/* orders page styles */
+.orders {
+  padding: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.buy {
+  color: green;
+  font-weight: bold;
+}
+
+.sell {
+  color: red;
+  font-weight: bold;
+}
+
+.no-orders {
+  text-align: center;
+  margin-top: 60px;
+}
+#mode{
+  color:white;
+}
