@@ -8,6 +8,7 @@ const cors = require('cors');
 const { HoldingsModel } = require('./model/HoldingsModel.jsx');
 const { PositionsModel } = require('./model/PositionsModel.jsx');
 const{ OrdersModel }=require("./model/OrdersModel.jsx");
+const authRoutes = require("./routes/auth.jsx");
 
 const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
@@ -15,6 +16,13 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use("/api/auth", authRoutes);
+app.use(express.json());
+
+
+app.listen(3002, () => {
+  console.log("Server running on port 3002");
+});
 
 // app.get('/addHoldings', async(req, res) => {
 //     let tempHoldings = [

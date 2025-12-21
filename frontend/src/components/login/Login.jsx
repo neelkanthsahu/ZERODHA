@@ -1,29 +1,32 @@
 import { useState } from "react";
 import axios from "axios";
 
-const Signup = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSignup = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     try {
       const res = await axios.post(
-        "http://localhost:3002/api/auth/signup",
+        "http://localhost:3002/api/auth/login",
         { email, password }
       );
 
+      // store JWT
       localStorage.setItem("token", res.data.token);
-      alert("Signup successful ✅");
-      // window.location.href = "/login";
+
+    //   alert("Login successful ✅");
+      window.location.href = "http://localhost:5173/dashboard";
+
 
     } catch (err) {
-      setError(err.response?.data?.message || "Signup failed");
+      setError(err.response?.data?.message || "Invalid credentials");
     } finally {
       setLoading(false);
     }
@@ -32,13 +35,13 @@ const Signup = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
-        
+
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-          Create your account
+          Welcome back
         </h2>
 
-        <form onSubmit={handleSignup} className="space-y-5">
-          
+        <form onSubmit={handleLogin} className="space-y-5">
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Email
@@ -78,14 +81,14 @@ const Signup = () => {
             disabled={loading}
             className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition disabled:opacity-60"
           >
-            {loading ? "Signing up..." : "Signup"}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 
         <p className="text-sm text-center text-gray-600 mt-6">
-          Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:underline">
-            Login
+          Don’t have an account?{" "}
+          <a href="/signup" className="text-blue-600 hover:underline">
+            Sign up
           </a>
         </p>
       </div>
@@ -93,4 +96,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;
