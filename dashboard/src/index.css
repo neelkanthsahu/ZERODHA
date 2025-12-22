@@ -876,3 +876,36 @@ hr {
 #mode{
   color:white;
 }
+
+/* profile menu css */
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  width: 180px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 10px;
+  z-index: 9999;
+}
+
+.profile-dropdown button {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.profile-dropdown button:hover {
+  background: #f5f5f5;
+}
+
+.logout {
+  color: red;
+}
+
+
