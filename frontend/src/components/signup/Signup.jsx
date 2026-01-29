@@ -12,11 +12,14 @@ const Signup = () => {
     setLoading(true);
     setError("");
 
+    // http://localhost:3002/api/auth/signup
+    
     try {
       const res = await axios.post(
-        "http://localhost:3002/api/auth/signup",
+        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
         { email, password }
       );
+
 
       localStorage.setItem("token", res.data.token);
       alert("Signup successful ✅");

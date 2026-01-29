@@ -14,15 +14,18 @@ const Login = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3002/api/auth/login",
+        `${import.meta.env.VITE_API_URL}/api/auth/login`,
         { email, password }
       );
+
 
       // store JWT
       localStorage.setItem("token", res.data.token);
 
-    //   alert("Login successful ✅");
-      window.location.href = "http://localhost:5174/dashboard";
+    // //   alert("Login successful ✅");
+    //   window.location.href = "http://localhost:5174/dashboard";
+
+      window.location.href = `${import.meta.env.VITE_DASHBOARD_URL}/dashboard`;
 
 
     } catch (err) {

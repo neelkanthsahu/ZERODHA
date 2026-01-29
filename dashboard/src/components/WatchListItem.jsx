@@ -55,9 +55,9 @@ const WatchListItem = ({ stock }) => {
         const symbolToFetch =
           SYMBOL_MAP[stock.name] || stock.name;
 
-        const res = await axios.get(
-          `http://localhost:3002/api/stocks/price/${symbolToFetch}`
-        );
+       const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/stocks/price/${symbolToFetch}`
+       );
 
         if (res.data?.price !== null) {
           setLivePrice(res.data.price);
