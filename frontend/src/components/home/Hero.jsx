@@ -1,6 +1,7 @@
 import React from 'react';
-import './Hero.css';
+import './hero.css';
 function Hero() {
+
     return (  
         <div className="max-w-screen-lg mx-auto p-5 mb-5 text-center">
             <div className='hero'>
