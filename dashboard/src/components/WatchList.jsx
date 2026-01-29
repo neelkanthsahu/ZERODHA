@@ -10,6 +10,7 @@ import {
 import GeneralContext from "./GeneralContext";
 import { watchlist } from "../data/data";
 import { DoughnutChart } from "./DoughnoutChart";
+import WatchListItem from "./WatchListItem";
 
 const labels = watchlist.map((subArray) => subArray["name"]);
 const WatchList = () => {
@@ -67,32 +68,32 @@ export default WatchList;
 
 // =============================
 
-const WatchListItem = ({ stock }) => {
-  const [showActions, setShowActions] = useState(false);
+// const WatchListItem = ({ stock }) => {
+//   const [showActions, setShowActions] = useState(false);
 
-  return (
-    <li
-      onMouseEnter={() => setShowActions(true)}
-      onMouseLeave={() => setShowActions(false)}
-    >
-      <div className="item">
-        <p className={stock.isDown ? "down" : "up"}>{stock.name}</p>
+//   return (
+//     <li
+//       onMouseEnter={() => setShowActions(true)}
+//       onMouseLeave={() => setShowActions(false)}
+//     >
+//       <div className="item">
+//         <p className={stock.isDown ? "down" : "up"}>{stock.name}</p>
 
-        <div className="itemInfo">
-          <span className="percent">{stock.percent}</span>
-          {stock.isDown ? (
-            <KeyboardArrowDown className="down" />
-          ) : (
-            <KeyboardArrowUp className="up" />
-          )}
-          <span className="price">{stock.price}</span>
-        </div>
-      </div>
+//         <div className="itemInfo">
+//           <span className="percent">{stock.percent}</span>
+//           {stock.isDown ? (
+//             <KeyboardArrowDown className="down" />
+//           ) : (
+//             <KeyboardArrowUp className="up" />
+//           )}
+//           <span className="price">{stock.price}</span>
+//         </div>
+//       </div>
 
-      {showActions && <WatchListActions uid={stock.name} />}
-    </li>
-  );
-};
+//       {showActions && <WatchListActions uid={stock.name} />}
+//     </li>
+//   );
+// };
 
 // =============================
 

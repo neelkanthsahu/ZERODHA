@@ -22,7 +22,7 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
 
     //   alert("Login successful ✅");
-      window.location.href = "http://localhost:5173/dashboard";
+      window.location.href = "http://localhost:5174/dashboard";
 
 
     } catch (err) {

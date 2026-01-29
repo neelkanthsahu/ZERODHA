@@ -24,6 +24,13 @@ app.listen(3002, () => {
   console.log("Server running on port 3002");
 });
 
+const stockRoutes = require("./routes/stock.jsx");
+app.use("/api/stocks", stockRoutes);
+app.listen(3002, () => {
+  console.log("Server running on port 3002 to test stock routes");
+});
+
+
 // app.get('/addHoldings', async(req, res) => {
 //     let tempHoldings = [
 //         {
